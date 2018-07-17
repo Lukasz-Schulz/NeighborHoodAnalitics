@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Map";
+}
+
+@model NeighborhoodAnalitics.Models.AbstractRatingCategory
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+</head>
+<body>
+    <div class="pac-card" id="pac-card">
+        <div>
+            <div id="title">
+                Autocomplete search
+            </div>
+            <div id="type-selector" class="pac-controls">
+                <input type="radio" name="type" id="live" checked="checked">
+                <label for="changetype-all">Live</label>
+
+                <input type="radio" name="userInput" id="travel">
+                <label for="changetype-establishment">Travel</label>
+            </div>
+
+        </div>
+        <div id="pac-container">
+            <input id="pac-input" type="text"
+                   placeholder="Enter a location">
+            <button>
+                @Html.ActionLink("click", "Map", new {
+                    placeName = userInput",
+                    ratingCategory = "travel"})
+            </button>
+
+        </div>
+        <div>
+            @Model.ListOfPlaceTypes[0].Name
+            @Model.ListOfPlaceTypes[0].Quantity
+            @Model.ListOfPlaceTypes[1].Name
+            @Model.ListOfPlaceTypes[1].Quantity
+        </div>
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+        <img src="" width="16" height="16" id="place-icon">
+        <span id="place-name" class="title"></span><br>
+        <span id="place-address"></span>
+    </div>
+
+
+
+    <script src="~/js/site.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY&libraries=places&callback=initMap"
+            async defer></script>
+</body>
+</html>
+
