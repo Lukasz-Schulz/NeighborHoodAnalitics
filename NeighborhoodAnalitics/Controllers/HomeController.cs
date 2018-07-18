@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NeighborhoodAnalitics.Models;
+using Newtonsoft.Json;
 
 namespace NeighborhoodAnalitics.Controllers
 {
@@ -19,31 +21,44 @@ namespace NeighborhoodAnalitics.Controllers
             return View();
         }
 
-        public IActionResult Map(string placeName, string ratingCategory)
+        [HttpPost]
+        public IActionResult Map(string userInput)
         {
-            AbstractRatingCategory live = new LivingRatingCategory();
-            AbstractRatingCategory travel = new TouristicRatingCategory();
-            AbstractRatingCategory chosenCategory;
-
-            if (ratingCategory == "live")
-            {
-                chosenCategory = live;
-            }
-            else if (ratingCategory == "travel")
-            {
-                chosenCategory = travel;
-            }
-            else
-            {
-                chosenCategory = travel;
-            }
-
             quantitySearcher = new PlaceQuantitySearcher();
-            quantitySearcher.FillPlaceQuantities(placeName, chosenCategory);
+            AbstractRatingCategory chosenCategory = new LivingRatingCategory();
+            quantitySearcher.FillPlaceQuantities(userInput, chosenCategory);
 
             return View(chosenCategory);
-        }
-        
 
+        }
+        public IActionResult Map()
+        {
+            return View();
+
+        }
+        //public IActionResult Map(string placeName, string ratingCategory)
+        //{
+        //    AbstractRatingCategory live = new LivingRatingCategory();
+        //    AbstractRatingCategory travel = new TouristicRatingCategory();
+        //    AbstractRatingCategory chosenCategory;
+
+        //    if (ratingCategory == "live")
+        //    {
+        //        chosenCategory = live;
+        //    }
+        //    else if (ratingCategory == "travel")
+        //    {
+        //        chosenCategory = travel;
+        //    }
+        //    else
+        //    {
+        //        chosenCategory = travel;
+        //    }
+
+        //    quantitySearcher = new PlaceQuantitySearcher();
+        //    quantitySearcher.FillPlaceQuantities(placeName, chosenCategory);
+
+        //    return View(chosenCategory);
+        //}
     }
 }

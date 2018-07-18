@@ -45,7 +45,6 @@ namespace NeighborhoodAnalitics.Models
         {
             if (searchPlace != null)
             {
-
                 string nearByRequestString = 
                     $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={searchPlace.Coordinates}&radius=700&type={type}&key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY";
                 WebRequest Request = WebRequest.Create(nearByRequestString);

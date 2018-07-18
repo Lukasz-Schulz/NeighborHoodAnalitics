@@ -29,21 +29,14 @@
 
         </div>
         <div id="pac-container">
-            <input id="pac-input" type="text"
-                   placeholder="Enter a location">
-            <button>
-                @Html.ActionLink("click", "Map", new {
-                    placeName = userInput",
-                    ratingCategory = "travel"})
-            </button>
+            <form method="post">
+                <input id="pac-input"
+                       type="text"
+                       placeholder="Enter a location">
+                <button id="btnPost">POSTOWANIE AJAXA</button>
+            </form>
+        </div>
 
-        </div>
-        <div>
-            @Model.ListOfPlaceTypes[0].Name
-            @Model.ListOfPlaceTypes[0].Quantity
-            @Model.ListOfPlaceTypes[1].Name
-            @Model.ListOfPlaceTypes[1].Quantity
-        </div>
     </div>
     <div id="map"></div>
     <div id="infowindow-content">
@@ -52,7 +45,10 @@
         <span id="place-address"></span>
     </div>
 
-
+    <div>
+        @*@Model.ListOfPlaceTypes[0].Name
+        @Model.ListOfPlaceTypes[0].Quantity*@
+    </div>
 
     <script src="~/js/site.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY&libraries=places&callback=initMap"

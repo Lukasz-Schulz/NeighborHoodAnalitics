@@ -24,7 +24,7 @@ function initMap() {
     // Set the data fields to return when the user selects a place.
     autocomplete.setFields(
         ['address_components', 'geometry', 'icon', 'name']);
-
+    
     var infowindow = new google.maps.InfoWindow();
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
@@ -75,4 +75,26 @@ function initMap() {
     document.querySelector('button').addEventListener('click', function () {
         userInput = document.querySelector('input#pac-input').value;
     });
+
+
+
+    /////////////////////////////////////////////////////////////
+
+    $('#btnPost').on('click', function () {
+        var userInputJS = $('#pac-input').val();
+
+        $.ajax({
+            type: "POST",
+            url: "Map",
+            data: {
+                userInput: userInputJS
+            },
+            success: function (response) {
+                console.log("wszystko ok");
+            },
+            error: function (response) {
+                console.log("nie działa");
+            }
+        });
+    })
 }
