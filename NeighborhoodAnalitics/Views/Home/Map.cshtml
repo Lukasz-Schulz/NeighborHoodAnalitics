@@ -11,7 +11,12 @@
     <title>Place Autocomplete</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    
+    <script src="~/js/Chart.js"></script>
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" 
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" 
+          crossorigin="anonymous">
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 </head>
 <body>
     <div class="pac-card" id="pac-card">
@@ -33,7 +38,7 @@
                 <input id="pac-input"
                        type="text"
                        placeholder="Enter a location">
-                <button id="btnPost">POSTOWANIE AJAXA</button>
+                <button id="btnPost" disabled>POSTOWANIE AJAXA</button>
             </form>
         </div>
 
@@ -45,14 +50,75 @@
         <span id="place-address"></span>
     </div>
 
-    <div>
-        @*@Model.ListOfPlaceTypes[0].Name
-        @Model.ListOfPlaceTypes[0].Quantity*@
+    <div id="example-search" class="container">
+        <div class="row">
+            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Sienkiewicza / życie", "Map", new { placeName = "Gdańsk, Sienkiewicza", ratingCategory = "live", style = "color: Red", @class = "btn btn-primary btn-large" })</button>
+            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Sienkiewicza / podróż", "Map", new { placeName = "Gdańsk, Sienkiewicza", ratingCategory = "travel" })</button>
+            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Długa / życie", "Map", new { placeName = "Gdańsk, Długa", ratingCategory = "live" })</button>
+        </div>
+        <div class="row">
+            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Długa / podróż", "Map", new { placeName = "Gdańsk, Długa", ratingCategory = "travel" })</button>
+            <button class="example-item col-4">@Html.ActionLink("Gdynia, Orłowska / życie", "Map", new { placeName = "Gdynia, Orłowska", ratingCategory = "live" })</button>
+            <button class="example-item col-4">@Html.ActionLink("Gdynia, Orłowska / podróż", "Map", new { placeName = "Gdynia, Orłowska", ratingCategory = "travel" })</button>
+        </div>
+        <div class="row">
+            <button class="example-item col-3">@Html.ActionLink("Gdańsk, Jagiellońska / życie", "Map", new { placeName = "Gdańsk, Jagiellońska", ratingCategory = "live" })</button>
+            <button class="example-item col-3">@Html.ActionLink("Gdańsk, Jagiellońska / podróż", "Map", new { placeName = "Gdańsk, Jagiellońska", ratingCategory = "travel" })</button>
+            <button class="example-item col-3">@Html.ActionLink("Warszawa, Marszałkowska / życie", "Map", new { placeName = "Warszawa, Marszałkowska", ratingCategory = "live" })</button>
+            <button class="example-item col-3">@Html.ActionLink("Warszawa, Marszałkowska / podróż", "Map", new { placeName = "Warszawa, Marszałkowska", ratingCategory = "travel" }) </button>
+        </div>
+    </div>
+
+    @*<div id="chart_container" class="container">
+            <div class="row">
+
+                <canvas id="myChart" class="col-5" width="100" height="100"></canvas>
+            </div>
+        </div>*@
+    <div id="chart_container">
+        <canvas id="myChart" width="100" height="100"></canvas>
+    </div>
+
+    <div id="type1">
+        <span class="typename">@Model.ListOfPlaceTypes[0].Name</span>
+        <span class="typequantity">@Model.ListOfPlaceTypes[0].Quantity</span>
+    </div>
+    <div id="type2">
+        <span class="typename">@Model.ListOfPlaceTypes[1].Name</span>
+        <span class="typequantity">@Model.ListOfPlaceTypes[1].Quantity</span>
+    </div>
+    <div id="type3">
+        <span class="typename">@Model.ListOfPlaceTypes[2].Name</span>
+        <span class="typequantity">@Model.ListOfPlaceTypes[2].Quantity</span>
+    </div>
+    <div id="type4">
+        <span class="typename">@Model.ListOfPlaceTypes[3].Name</span>
+        <span class="typequantity">@Model.ListOfPlaceTypes[3].Quantity</span>
+    </div>
+    <div id="type5">
+        <span class="typename">@Model.ListOfPlaceTypes[4].Name</span>
+        <span class="typequantity">@Model.ListOfPlaceTypes[4].Quantity</span>
+    </div>
+    <div id="type6">
+        <span class="typename">@Model.ListOfPlaceTypes[5].Name</span>
+        <span class="typequantity">@Model.ListOfPlaceTypes[5].Quantity</span>
     </div>
 
     <script src="~/js/site.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs&libraries=places&callback=initMap"
             async defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+
+    @*<a href="/Home/Map/Wrocław"> GDANSK</a>*@
+    @*<a href="/somecontroller/someaction/123?a=b&c=d">link text</a>*@
 </body>
 </html>
 

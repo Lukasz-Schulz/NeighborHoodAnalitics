@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace NeighborhoodAnalitics.Models
+namespace NeighborhoodAnalitics.Controllers
 {
 
     public class RequestSender
@@ -13,12 +13,15 @@ namespace NeighborhoodAnalitics.Models
         /// <summary>
         /// API KEY
         /// AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY
+        /// ///////////
+        /// API KEY 2
+        /// AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs
         /// </summary>
 
         public Place GetLocalisationByName(string placeName)
         {
             string getLocalisationRequestString = 
-                $"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={placeName}&inputtype=textquery&fields=name,geometry&key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY";
+                $"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={placeName}&inputtype=textquery&fields=name,geometry&key=AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs";
 
             WebRequest Request = WebRequest.Create(getLocalisationRequestString);
             WebResponse response = Request.GetResponse();
@@ -45,8 +48,9 @@ namespace NeighborhoodAnalitics.Models
         {
             if (searchPlace != null)
             {
+
                 string nearByRequestString = 
-                    $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={searchPlace.Coordinates}&radius=700&type={type}&key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY";
+                    $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={searchPlace.Coordinates}&radius=700&type={type}&key=AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs";
                 WebRequest Request = WebRequest.Create(nearByRequestString);
                 WebResponse response = Request.GetResponse();
                 Stream dataStream = response.GetResponseStream();

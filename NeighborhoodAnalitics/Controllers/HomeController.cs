@@ -17,48 +17,43 @@ namespace NeighborhoodAnalitics.Controllers
 
         public IActionResult Index()
         {
-           
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Map(string userInput)
-        {
-            quantitySearcher = new PlaceQuantitySearcher();
-            AbstractRatingCategory chosenCategory = new LivingRatingCategory();
-            quantitySearcher.FillPlaceQuantities(userInput, chosenCategory);
-
-            return View(chosenCategory);
-
-        }
-        public IActionResult Map()
-        {
-            return View();
-
-        }
-        //public IActionResult Map(string placeName, string ratingCategory)
+        //public IActionResult Map(string userInput)
         //{
-        //    AbstractRatingCategory live = new LivingRatingCategory();
-        //    AbstractRatingCategory travel = new TouristicRatingCategory();
-        //    AbstractRatingCategory chosenCategory;
-
-        //    if (ratingCategory == "live")
-        //    {
-        //        chosenCategory = live;
-        //    }
-        //    else if (ratingCategory == "travel")
-        //    {
-        //        chosenCategory = travel;
-        //    }
-        //    else
-        //    {
-        //        chosenCategory = travel;
-        //    }
-
         //    quantitySearcher = new PlaceQuantitySearcher();
-        //    quantitySearcher.FillPlaceQuantities(placeName, chosenCategory);
-
+        //    AbstractRatingCategory chosenCategory = new LivingRatingCategory();
+        //    quantitySearcher.FillPlaceQuantities(userInput, chosenCategory);
         //    return View(chosenCategory);
         //}
+        //public IActionResult Map()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        public IActionResult Map(string placeName, string ratingCategory)
+        {
+            AbstractRatingCategory live = new LivingRatingCategory();
+            AbstractRatingCategory travel = new TouristicRatingCategory();
+            AbstractRatingCategory chosenCategory;
+
+            if (ratingCategory == "live")
+            {
+                chosenCategory = live;
+            }
+            else if (ratingCategory == "travel")
+            {
+                chosenCategory = travel;
+            }
+            else
+            {
+                chosenCategory = travel;
+            }
+            quantitySearcher = new PlaceQuantitySearcher();
+            quantitySearcher.FillPlaceQuantities(placeName, chosenCategory);
+
+            return View(chosenCategory);
+        }
     }
 }

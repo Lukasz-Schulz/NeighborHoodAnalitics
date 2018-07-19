@@ -1,16 +1,18 @@
-﻿namespace NeighborhoodAnalitics.Models
+﻿using NeighborhoodAnalitics.Models;
+
+namespace NeighborhoodAnalitics.Controllers
 {
     public class PlaceQuantitySearcher
     {
-        public RequestSender GoogleRequestSender = new RequestSender();
+        RequestSender _requestSender = new RequestSender();
         public void FillPlaceQuantities(string placeName, AbstractRatingCategory ratingCategory)
         {
-            Place placeToAnalize = GoogleRequestSender.GetLocalisationByName(placeName);
+            Place placeToAnalize = _requestSender.GetLocalisationByName(placeName);
 
             for(int i = 0; i < ratingCategory.ListOfPlaceTypes.Count; i++)
             {
-                ListOfResults listOfResults =  GoogleRequestSender.FindNear(placeToAnalize, ratingCategory.ListOfPlaceTypes[i].Name);
-                ratingCategory.ListOfPlaceTypes[i].Quantity = listOfResults.results.Length;                
+                ListOfResults listOfResults =  _requestSender.FindNear(placeToAnalize, ratingCategory.ListOfPlaceTypes[i].Name);
+                ratingCategory.ListOfPlaceTypes[i].Quantity = listOfResults.results.Length;
             }
         }
     }

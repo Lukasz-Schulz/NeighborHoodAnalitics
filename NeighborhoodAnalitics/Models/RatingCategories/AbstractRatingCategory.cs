@@ -8,15 +8,7 @@ namespace NeighborhoodAnalitics.Models
     {
         public int Distance { get; set; }
         public List<PlaceType> ListOfPlaceTypes { get; private set; } = new List<PlaceType>();
-        public decimal Rating()
-        {
-            decimal rating = 0;
-            foreach(PlaceType place in ListOfPlaceTypes)
-            {
-                rating += place.Quantity;
-            }
-            return rating;            
-        }
+        public abstract decimal Rating();
 
         public void AddPlaceType(PlaceType place)
         {
@@ -34,5 +26,4 @@ namespace NeighborhoodAnalitics.Models
             Name = name;
         }
     }
-
 }

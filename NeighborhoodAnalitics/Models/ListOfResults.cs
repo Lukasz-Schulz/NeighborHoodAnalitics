@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NeighborhoodAnalitics.Models
+﻿namespace NeighborhoodAnalitics.Controllers
 {
     public class ListOfResults
     {

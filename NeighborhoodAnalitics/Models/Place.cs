@@ -1,8 +1,8 @@
-﻿namespace NeighborhoodAnalitics.Models
+﻿namespace NeighborhoodAnalitics.Controllers
 {
     public class Place
     {
-        public Candidates[] candidates = { new Candidates()};
+        public Candidates[] candidates;
         public string Name
         {
             get
@@ -14,18 +14,11 @@
         {
             get
             {
-                if(candidates.Length > 0)
-                {
-                    string coordinates = string.Empty;
-                    coordinates += candidates[0].geometry.location.lat.ToString(System.Globalization.CultureInfo.InvariantCulture);
-                    coordinates += ", ";
-                    coordinates += candidates[0].geometry.location.lng.ToString(System.Globalization.CultureInfo.InvariantCulture);
-                    return coordinates;
-                }
-                else
-                {
-                    return "0,0";
-                }
+                string coordinates = string.Empty;
+                coordinates += candidates[0].geometry.location.lat.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                coordinates += ", ";
+                coordinates += candidates[0].geometry.location.lng.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                return coordinates;
             }
         }
     }

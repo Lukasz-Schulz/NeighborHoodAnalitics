@@ -1,4 +1,4 @@
-﻿namespace NeighborhoodAnalitics.Models
+﻿namespace NeighborhoodAnalitics.Controllers
 {
     public class Geometry
     {

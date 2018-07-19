@@ -1,0 +1,11 @@
+C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=NeighborhoodAnalitics
+--content-root=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\Home\Index.cshtml
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\Home\Map.cshtml
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\Shared\Error.cshtml
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\Shared\_Layout.cshtml
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\_ViewImports.cshtml
+--file=C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\Views\_ViewStart.cshtml

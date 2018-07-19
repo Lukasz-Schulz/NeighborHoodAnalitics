@@ -97,4 +97,58 @@ function initMap() {
             }
         });
     })
+
+    let typequantity1 = document.querySelector("#type1 .typequantity").innerText;
+    let typename1 = document.querySelector("#type1 .typename").innerText;
+    let typequantity2 = document.querySelector("#type2 .typequantity").innerText;
+    let typename2 = document.querySelector("#type2 .typename").innerText;
+    let typequantity3 = document.querySelector("#type3 .typequantity").innerText;
+    let typename3 = document.querySelector("#type3 .typename").innerText;
+    let typequantity4 = document.querySelector("#type4 .typequantity").innerText;
+    let typename4 = document.querySelector("#type4 .typename").innerText;
+    let typequantity5 = document.querySelector("#type5 .typequantity").innerText;
+    let typename5 = document.querySelector("#type5 .typename").innerText;
+    let typequantity6 = document.querySelector("#type6 .typequantity").innerText;
+    let typename6 = document.querySelector("#type6 .typename").innerText;
+
+    let ctx = document.getElementById("myChart");
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [typename1, typename2, typename3, typename4, typename5, typename6],
+            datasets: [{
+                label: 'Number of facilities',
+                data: [typequantity1, typequantity2, typequantity3, typequantity4, typequantity5, typequantity6],
+                backgroundColor: [
+                    '#ff0000',
+                    '#000000',
+                    '#00ff00',
+                    '#0000ff',
+                    '#00ffff',
+                    '#ffff00',
+                ],
+                borderColor: [
+                    //'rgba(255,99,132,1)',
+                    //'rgba(54, 162, 235, 1)',
+                    //'rgba(54, 162, 235, 1)',
+                    //'rgba(54, 162, 235, 1)',
+                    //'rgba(54, 162, 235, 1)',
+                    //'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+
+
 }

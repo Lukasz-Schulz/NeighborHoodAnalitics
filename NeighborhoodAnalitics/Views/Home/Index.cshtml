@@ -1,9 +1,56 @@
-﻿
+﻿<head>
+    <script src="~/js/Chart.js"></script>
+    <style>
+        #chart_container {
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            padding: 1px;
+        }
+    </style>
+</head>
 
+<body>
 
+    <div id="chart_container">
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
 
-siema
+    <button>
+        @Html.ActionLink("Go To Map", "Map", new { placeName = "Gdańsk", ratingCategory = "live" })
+    </button>
+    <script>
 
-<button>
-    @*@Html.ActionLink("Go To Map", "Map")*@
-</button>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Living", "Traveling"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [8, 88],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+    <script src="~/js/site.js"></script>
+</body>
+
