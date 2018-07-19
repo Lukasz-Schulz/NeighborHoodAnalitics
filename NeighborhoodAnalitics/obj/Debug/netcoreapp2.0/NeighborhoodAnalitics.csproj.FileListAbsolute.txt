@@ -9,3 +9,14 @@ C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\bin\Debug
 C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\bin\Debug\netcoreapp2.0\NeighborhoodAnalitics.pdb
 C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.dll
 C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.pdb
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.dll
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.pdb
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Debug\netcoreapp2.0\NeighborhoodAnalitics.deps.json
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Debug\netcoreapp2.0\NeighborhoodAnalitics.runtimeconfig.json
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Debug\netcoreapp2.0\NeighborhoodAnalitics.runtimeconfig.dev.json
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Debug\netcoreapp2.0\NeighborhoodAnalitics.dll
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Debug\netcoreapp2.0\NeighborhoodAnalitics.pdb
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.csprojAssemblyReference.cache
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.csproj.CoreCompileInputs.cache
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.AssemblyInfoInputs.cache
+C:\Users\CM\source\repos\NeighborhoodAnalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Debug\netcoreapp2.0\NeighborhoodAnalitics.AssemblyInfo.cs

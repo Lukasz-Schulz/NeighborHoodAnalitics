@@ -21,7 +21,7 @@ namespace NeighborhoodAnalitics.Controllers
         public Place GetLocalisationByName(string placeName)
         {
             string getLocalisationRequestString = 
-                $"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={placeName}&inputtype=textquery&fields=name,geometry&key=AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs";
+                $"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input={placeName}&inputtype=textquery&fields=name,geometry&key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY";
 
             WebRequest Request = WebRequest.Create(getLocalisationRequestString);
             WebResponse response = Request.GetResponse();
@@ -50,7 +50,7 @@ namespace NeighborhoodAnalitics.Controllers
             {
 
                 string nearByRequestString = 
-                    $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={searchPlace.Coordinates}&radius=700&type={type}&key=AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs";
+                    $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={searchPlace.Coordinates}&radius=700&type={type}&key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY";
                 WebRequest Request = WebRequest.Create(nearByRequestString);
                 WebResponse response = Request.GetResponse();
                 Stream dataStream = response.GetResponseStream();

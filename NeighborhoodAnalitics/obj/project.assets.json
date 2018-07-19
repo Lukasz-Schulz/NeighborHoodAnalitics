@@ -13271,23 +13271,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RENT\\.nuget\\packages\\": {},
+    "C:\\Users\\CM\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\RENT\\source\\repos\\NeighborhoodAnalitics\\NeighborhoodAnalitics\\NeighborhoodAnalitics.csproj",
+      "projectUniqueName": "C:\\Users\\CM\\source\\repos\\NeighborhoodAnalitics\\NeighborHoodAnalitics\\NeighborhoodAnalitics\\NeighborhoodAnalitics.csproj",
       "projectName": "NeighborhoodAnalitics",
-      "projectPath": "C:\\Users\\RENT\\source\\repos\\NeighborhoodAnalitics\\NeighborhoodAnalitics\\NeighborhoodAnalitics.csproj",
-      "packagesPath": "C:\\Users\\RENT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\RENT\\source\\repos\\NeighborhoodAnalitics\\NeighborhoodAnalitics\\obj\\",
+      "projectPath": "C:\\Users\\CM\\source\\repos\\NeighborhoodAnalitics\\NeighborHoodAnalitics\\NeighborhoodAnalitics\\NeighborhoodAnalitics.csproj",
+      "packagesPath": "C:\\Users\\CM\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CM\\source\\repos\\NeighborhoodAnalitics\\NeighborHoodAnalitics\\NeighborhoodAnalitics\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\RENT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

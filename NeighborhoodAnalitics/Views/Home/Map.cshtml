@@ -22,7 +22,9 @@
     <div class="pac-card" id="pac-card">
         <div>
             <div id="title">
-                Autocomplete search
+                Search place
+
+
             </div>
             <div id="type-selector" class="pac-controls">
                 <input type="radio" name="type" id="live" checked="checked">
@@ -50,62 +52,71 @@
         <span id="place-address"></span>
     </div>
 
-    <div id="example-search" class="container">
-        <div class="row">
-            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Sienkiewicza / życie", "Map", new { placeName = "Gdańsk, Sienkiewicza", ratingCategory = "live", style = "color: Red", @class = "btn btn-primary btn-large" })</button>
-            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Sienkiewicza / podróż", "Map", new { placeName = "Gdańsk, Sienkiewicza", ratingCategory = "travel" })</button>
-            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Długa / życie", "Map", new { placeName = "Gdańsk, Długa", ratingCategory = "live" })</button>
-        </div>
-        <div class="row">
-            <button class="example-item col-4">@Html.ActionLink("Gdańsk, Długa / podróż", "Map", new { placeName = "Gdańsk, Długa", ratingCategory = "travel" })</button>
-            <button class="example-item col-4">@Html.ActionLink("Gdynia, Orłowska / życie", "Map", new { placeName = "Gdynia, Orłowska", ratingCategory = "live" })</button>
-            <button class="example-item col-4">@Html.ActionLink("Gdynia, Orłowska / podróż", "Map", new { placeName = "Gdynia, Orłowska", ratingCategory = "travel" })</button>
-        </div>
-        <div class="row">
-            <button class="example-item col-3">@Html.ActionLink("Gdańsk, Jagiellońska / życie", "Map", new { placeName = "Gdańsk, Jagiellońska", ratingCategory = "live" })</button>
-            <button class="example-item col-3">@Html.ActionLink("Gdańsk, Jagiellońska / podróż", "Map", new { placeName = "Gdańsk, Jagiellońska", ratingCategory = "travel" })</button>
-            <button class="example-item col-3">@Html.ActionLink("Warszawa, Marszałkowska / życie", "Map", new { placeName = "Warszawa, Marszałkowska", ratingCategory = "live" })</button>
-            <button class="example-item col-3">@Html.ActionLink("Warszawa, Marszałkowska / podróż", "Map", new { placeName = "Warszawa, Marszałkowska", ratingCategory = "travel" }) </button>
-        </div>
-    </div>
-
-    @*<div id="chart_container" class="container">
-            <div class="row">
-
-                <canvas id="myChart" class="col-5" width="100" height="100"></canvas>
+    <div class="row">
+        <div class="col-sm-12 col-lg-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Example search</h4>
+                    <div class="container">
+                        <div class="row list">
+                            <ul>
+                                <li>@Html.ActionLink("Gdańsk, Sienkiewicza / życie", "Map", new { placeName = "Gdańsk, Sienkiewicza", ratingCategory = "live" })</li>
+                                <li>@Html.ActionLink("Gdańsk, Sienkiewicza / podróż", "Map", new { placeName = "Gdańsk, Sienkiewicza", ratingCategory = "travel" })</li>
+                                <li>@Html.ActionLink("Gdańsk, Długa / życie", "Map", new { placeName = "Gdańsk, Długa", ratingCategory = "live" })</li>
+                                <li>@Html.ActionLink("Gdańsk, Długa / podróż", "Map", new { placeName = "Gdańsk, Długa", ratingCategory = "travel" })</li>
+                                <li>@Html.ActionLink("Gdynia, Orłowska / życie", "Map", new { placeName = "Gdynia, Orłowska", ratingCategory = "live" })</li>
+                                <li>@Html.ActionLink("Gdynia, Orłowska / podróż", "Map", new { placeName = "Gdynia, Orłowska", ratingCategory = "travel" })</li>
+                                <li>@Html.ActionLink("Gdańsk, Jagiellońska / życie", "Map", new { placeName = "Gdańsk, Jagiellońska", ratingCategory = "live" })</li>
+                                <li>@Html.ActionLink("Gdańsk, Jagiellońska / podróż", "Map", new { placeName = "Gdańsk, Jagiellońska", ratingCategory = "travel" })</li>
+                                <li>@Html.ActionLink("Warszawa, Marszałkowska / życie", "Map", new { placeName = "Warszawa, Marszałkowska", ratingCategory = "live" })</li>
+                                <li>@Html.ActionLink("Warszawa, Marszałkowska / podróż", "Map", new { placeName = "Warszawa, Marszałkowska", ratingCategory = "travel" }) </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>*@
-    <div id="chart_container">
-        <canvas id="myChart" width="100" height="100"></canvas>
+        </div>
+        <div class="col-sm-12 ml-auto col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Statistics</h4>
+                        <div id="chart_container">
+                            <canvas id="myChart" width="100" height="100"></canvas>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="type1">
-        <span class="typename">@Model.ListOfPlaceTypes[0].Name</span>
-        <span class="typequantity">@Model.ListOfPlaceTypes[0].Quantity</span>
-    </div>
-    <div id="type2">
-        <span class="typename">@Model.ListOfPlaceTypes[1].Name</span>
-        <span class="typequantity">@Model.ListOfPlaceTypes[1].Quantity</span>
-    </div>
-    <div id="type3">
-        <span class="typename">@Model.ListOfPlaceTypes[2].Name</span>
-        <span class="typequantity">@Model.ListOfPlaceTypes[2].Quantity</span>
-    </div>
-    <div id="type4">
-        <span class="typename">@Model.ListOfPlaceTypes[3].Name</span>
-        <span class="typequantity">@Model.ListOfPlaceTypes[3].Quantity</span>
-    </div>
-    <div id="type5">
-        <span class="typename">@Model.ListOfPlaceTypes[4].Name</span>
-        <span class="typequantity">@Model.ListOfPlaceTypes[4].Quantity</span>
-    </div>
-    <div id="type6">
-        <span class="typename">@Model.ListOfPlaceTypes[5].Name</span>
-        <span class="typequantity">@Model.ListOfPlaceTypes[5].Quantity</span>
+    <div id="info-container">
+        <div id="type1">
+            <span class="typename">@Model.ListOfPlaceTypes[0].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[0].Quantity</span>
+        </div>
+        <div id="type2">
+            <span class="typename">@Model.ListOfPlaceTypes[1].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[1].Quantity</span>
+        </div>
+        <div id="type3">
+            <span class="typename">@Model.ListOfPlaceTypes[2].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[2].Quantity</span>
+        </div>
+        <div id="type4">
+            <span class="typename">@Model.ListOfPlaceTypes[3].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[3].Quantity</span>
+        </div>
+        <div id="type5">
+            <span class="typename">@Model.ListOfPlaceTypes[4].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[4].Quantity</span>
+        </div>
+        <div id="type6">
+            <span class="typename">@Model.ListOfPlaceTypes[5].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[5].Quantity</span>
+        </div>
     </div>
 
     <script src="~/js/site.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGJanHWRMRKJ1e4JDgDI1yjW2Tze_KtOs&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY&libraries=places&callback=initMap"
             async defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

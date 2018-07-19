@@ -74,8 +74,17 @@ html, body {
     }
 
 #title {
-    color: #fff;
-    background-color: #4d90fe;
+    background-color: #0069d9;
+    color: white;
+    border: 2px solid #0069d9;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 1px;
+    margin-top: 0.25rem;
+    width: 100%;
+    border-radius: .3rem;
     font-size: 25px;
     font-weight: 500;
     padding: 6px 12px;
@@ -86,16 +95,13 @@ html, body {
     width: 600px;
 }
 
-#example-search {
-    border: solid 4px #999999;
-    background-color: #dddddd;
+/*#example-search {
     padding: 2em;
-}
+}*/
 
 .example-item {
     display: inline-block;
     width: auto;
-    /*border: solid 4px #333333;*/
     padding: 0.5em;
 }
 
@@ -104,7 +110,58 @@ a.example-item  {
 }
 
 #chart_container {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
     border: double 4px;
     border-radius: 3px;
-    width: 300px;
 }
+
+#info-container {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a:link {
+    font-size: large;
+    background-color: #0069d9;
+    color: white;
+    border: 2px solid #0069d9;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 1px;
+    margin-top: 0.25rem;
+    width: 15em;
+    border-radius: .3rem;
+}
+li a:visited {
+    font-size: large;
+    background-color: #0069d9;
+    color: white;
+    border: 2px solid #0069d9;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 1px;
+    margin-top: 0.25rem;
+    width: 15em;
+    border-radius: .3rem;
+}
+
+#example-search {
+    margin: auto;
+}
+
+.list {
+    margin: auto;
+}
+

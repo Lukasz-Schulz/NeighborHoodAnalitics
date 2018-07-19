@@ -1,6 +1,6 @@
-﻿// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+﻿ //This example requires the Places library. Include the libraries=places
+ ////parameter when you first load the API. For example:
+ //<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIxaqwOzo2dsq8cUsKlkgQcjRH4w1LRRY&libraries=places">
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -128,14 +128,8 @@ function initMap() {
                     '#ffff00',
                 ],
                 borderColor: [
-                    //'rgba(255,99,132,1)',
-                    //'rgba(54, 162, 235, 1)',
-                    //'rgba(54, 162, 235, 1)',
-                    //'rgba(54, 162, 235, 1)',
-                    //'rgba(54, 162, 235, 1)',
-                    //'rgba(54, 162, 235, 1)',
                 ],
-                borderWidth: 2
+                borderWidth: 1
             }]
         },
         options: {
