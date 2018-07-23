@@ -1,10 +1,12 @@
-﻿/* Always set the map height explicitly to define the size of the div
-        * element that contains the map. */
-#map {
-    height: 100%;
+﻿html body {
+    box-sizing: border-box;
+    background-color: #4E4D53;
 }
-/* Optional: Makes the sample page fill the window. */
+#map {
+    height: 400px;
+}
 html, body {
+    position: relative;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -39,9 +41,13 @@ html, body {
     font-family: Roboto;
 }
 
+#pac-card.pac-card {
+    width: 50% !important;
+}
+
 #pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
+    padding: 2px;
+    margin: 2px;
 }
 
 .pac-controls {
@@ -60,10 +66,10 @@ html, body {
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
-    margin-left: 12px;
+    margin: auto;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 400px;
+    width: 100%;
 }
 
     #pac-input:focus {
@@ -71,14 +77,131 @@ html, body {
     }
 
 #title {
-    color: #fff;
-    background-color: #4d90fe;
+    background-color: #0069d9;
+    color: white;
+    border: 2px solid #0069d9;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 1px;
+    margin-top: 0.25rem;
+    width: 100%;
+    border-radius: .3rem;
     font-size: 25px;
     font-weight: 500;
     padding: 6px 12px;
 }
 
-#map-container {
-    border: solid 5px;
-    width: 600px;
+.example-item {
+    display: inline-block;
+    width: auto;
+    padding: 0.5em;
+}
+
+a.example-item  {
+    text-decoration: none;
+}
+
+#info-container {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav-item,
+#btnPost {
+    font-size: large;
+    background-color: #fdefe2;
+    color: #1E3441;
+    border: 2px solid #fdefe2;
+    padding: 0px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: auto;
+    margin-top: 0.25rem;
+    width: 100%;
+    border-radius: .3rem;
+}
+
+    .nav-item a {
+        width: auto;
+        color: #1E3441;
+    }
+    .nav-item a :link {
+        text-decoration: none;
+    }
+
+    div.nav-item :hover {
+        opacity: 0.4;
+    }
+
+jumbotron img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+jumbotron {
+    position: relative;
+    top: 70px;
+}
+
+input[type=radio] {
+    margin-left: 1em;
+}
+
+#about {
+    height: 100%;
+}
+
+    #about p {
+        font-size: small;
+        width:75%;
+        margin: auto;
+        text-align: justify;
+        font-weight: 500;
+    }
+
+    #about h4 {
+        text-align: center;
+    }
+    #about section {
+        display: block;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+nav {
+    background-color: #DA5D4C;
+}
+
+footer .card,
+article .card,
+main .card {
+    margin-top: 5em;
+    background-color: #fdefe2;
+}
+
+.nav-row {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+footer {
+    margin-top: 0em;
+}
+
+    footer .card {
+        margin-top: 1em;
+        text-align: center;
+    }
+
+footer .card a {
+    text-decoration: none;
 }

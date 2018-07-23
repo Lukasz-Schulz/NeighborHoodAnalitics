@@ -14,6 +14,8 @@ namespace NeighborhoodAnalitics.Controllers
                 ListOfResults listOfResults =  _requestSender.FindNear(placeToAnalize, ratingCategory.ListOfPlaceTypes[i].Name);
                 ratingCategory.ListOfPlaceTypes[i].Quantity = listOfResults.results.Length;
             }
+            ratingCategory.Lat = placeToAnalize.Lat.ToString().Replace(',', '.');
+            ratingCategory.Lng = placeToAnalize.Lng.ToString().Replace(',', '.');
         }
     }
 }

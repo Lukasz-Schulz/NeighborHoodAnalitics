@@ -1,30 +1,159 @@
-﻿<head>
-    <script src="~/js/Chart.js"></script>
-    <style>
-        .roundedButton {
-            font-family: Verdana, Helvetica, Arial, sans-serif;
-            font-size: 12px;
-            color: #181818;
-            color: rgba(0,0,0,0.4);
-            width: 65px;
-            padding: 8px 12px;
-            border: none;
-            outline: none;
-            outline: 0;
-            -moz-border-radius: 2px;
-            -webkit-border-radius: 2px;
-            border-radius: 2px;
-            -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
-            -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
-            box-shadow: 0px 1px 3px rgba(0,0,0,0.8);
-        }
-    </style>
-</head>
+﻿
+@{
+    ViewData["Title"] = "Map";
+}
 
+@model NeighborhoodAnalitics.Models.AbstractRatingCategory
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+</head>
 <body>
-        @Html.ActionLink("Go To Map", "Map", new { placeName = "Gdańsk", ratingCategory = "live", @class = "btn btn-primary btn-large" })
-        @Html.ActionLink("Go To Map", "Map", new { @class = "roundedButton" })
- 
-    <script src="~/js/site.js"></script>
+    <header>
+        <nav class="fixed-top">
+            <span class="container">
+                <div class="row nav-row">
+                    <div class="col-4">
+                        <div class="nav-item ">
+                            <a class="nav-link" href="#about">About</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="nav-item">
+                            <a class="nav-link" href="#map-container">Go to map</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="nav-item">
+                            <a class="nav-link" href="#chart_container">Go to chart</a>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </nav>
+        <jumbotron>
+            <img src="~/images/jumbotron.jpg" />
+        </jumbotron>
+    </header>
+
+    <main>
+        <article>
+            <div class="card" id="about">
+                <div class="card-body">
+                    <section>
+                        <h4>About Check Your Place</h4>
+                        <p>
+                            Check your place is a sketch of application which checks certain neighborhoods characteristics.
+                            It helps people find the perfekt spot to travel, live or work in.
+                            Check your place gives you information about number of basic facilities profiled for your needs.
+                            The interpretation system is coming soon, to give you an overwiew of place living or traveling 
+                            quality compared to other places.
+                        </p>
+                    </section>
+                    <section>
+                        <h4>How to use it?</h4>
+                        <p>
+                            The usage of Check Your place is just as easy as it looks. Just type your destination point in 
+                            the search box on the map to find it, and press "check your place".
+                            It will take our server a few seconds to send few requests to several APIs, interprete them and
+                            send you back an answer. Your browser draws a chart and voila!
+                            Please note, that the app is in its early phase. Informations which you receive is much more 
+                            than just place type and its quantity. We are working on presenting them to you in the most 
+                            accessible way :)
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+        </article>
+        <div class="pac-card" id="pac-card">
+            <div id="pac-container">
+                <form method="post">
+                    <input id="pac-input"
+                           type="text"
+                           name="placeInput"
+                           placeholder="Enter a location">
+                    <div id="type-selector" class="pac-controls">
+                        <input type="radio"
+                               name="category"
+                               checked="checked"
+                               value="live">
+                        <label for="live">Live</label>
+
+                        <input type="radio"
+                               name="category"
+                               value="travel">
+                        <label for="live">Travel</label>
+                    </div>
+                    <button id="btnPost">Check your place</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="infowindow-content">
+            <img src="" width="16" height="16" id="place-icon">
+            <span id="place-name" class="title"></span><br>
+            <span id="place-address"></span>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12 mr-auto col-lg-7" id="map-container">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 mr-auto col-lg-5" id="chart_container">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Statistics for @Model.SearchedPlaceName</h4>
+                        <div>
+                            <canvas id="myChart" width="100" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <div id="info-container">
+        <span id="lattitude">@Model.Lat</span>
+        <span id="longitude">@Model.Lng</span>
+        <div id="type1">
+            <span class="typename">@Model.ListOfPlaceTypes[0].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[0].Quantity</span>
+        </div>
+        <div id="type2">
+            <span class="typename">@Model.ListOfPlaceTypes[1].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[1].Quantity</span>
+        </div>
+        <div id="type3">
+            <span class="typename">@Model.ListOfPlaceTypes[2].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[2].Quantity</span>
+        </div>
+        <div id="type4">
+            <span class="typename">@Model.ListOfPlaceTypes[3].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[3].Quantity</span>
+        </div>
+        <div id="type5">
+            <span class="typename">@Model.ListOfPlaceTypes[4].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[4].Quantity</span>
+        </div>
+        <div id="type6">
+            <span class="typename">@Model.ListOfPlaceTypes[5].Name</span>
+            <span class="typequantity">@Model.ListOfPlaceTypes[5].Quantity</span>
+        </div>
+    </div>
 </body>
+</html>
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="NeighborhoodAnalitics" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\RENT\\source\\repos\\NeighborhoodAnalitics\\NeighborhoodAnalitics\\obj\\Release\\netcoreapp2\.0\\PubTmp\\Out\\$" />
+  <parameter name="IIS Web Application Name" description="" value="neighborhoodnalitics" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\CM\\source\\repos\\NeighborhoodAnalitics\\NeighborHoodAnalitics\\NeighborhoodAnalitics\\obj\\Release\\netcoreapp2\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

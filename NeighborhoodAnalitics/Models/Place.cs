@@ -10,6 +10,22 @@
                  return candidates[0].name;
             }
         }
+        public float Lat
+        {
+            get
+            {
+                return candidates[0].geometry.location.lat;
+            }
+        }
+        
+        public float Lng
+        {
+            get
+            {
+                return candidates[0].geometry.location.lng;
+            }
+        }
+
         public string Coordinates
         {
             get

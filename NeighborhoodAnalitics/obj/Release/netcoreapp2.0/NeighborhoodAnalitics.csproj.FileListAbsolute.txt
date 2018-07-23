@@ -9,3 +9,14 @@ C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\obj\Relea
 C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.dll
 C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.pdb
 C:\Users\RENT\source\repos\NeighborhoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.csprojAssemblyReference.cache
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Release\netcoreapp2.0\NeighborhoodAnalitics.deps.json
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Release\netcoreapp2.0\NeighborhoodAnalitics.runtimeconfig.json
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Release\netcoreapp2.0\NeighborhoodAnalitics.runtimeconfig.dev.json
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Release\netcoreapp2.0\NeighborhoodAnalitics.dll
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\bin\Release\netcoreapp2.0\NeighborhoodAnalitics.pdb
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.csprojAssemblyReference.cache
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.csproj.CoreCompileInputs.cache
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.AssemblyInfoInputs.cache
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.AssemblyInfo.cs
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.dll
+C:\Users\CM\source\repos\neighborhoodanalitics\NeighborHoodAnalitics\NeighborhoodAnalitics\obj\Release\netcoreapp2.0\NeighborhoodAnalitics.pdb

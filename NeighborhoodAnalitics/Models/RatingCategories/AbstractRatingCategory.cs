@@ -6,13 +6,20 @@ namespace NeighborhoodAnalitics.Models
 {
     public abstract class AbstractRatingCategory
     {
-        public int Distance { get; set; }
+        public string SearchedPlaceName { get; private set; }
         public List<PlaceType> ListOfPlaceTypes { get; private set; } = new List<PlaceType>();
         public abstract decimal Rating();
+        public string Lat { get; set; }
+        public string Lng { get; set; }
 
         public void AddPlaceType(PlaceType place)
         {
             ListOfPlaceTypes.Add(place);
+        }
+
+        public void SetPlaceName(string name)
+        {
+            SearchedPlaceName = name;
         }
     }
 

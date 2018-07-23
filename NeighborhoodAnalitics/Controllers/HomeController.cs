@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NeighborhoodAnalitics.Models;
 using Newtonsoft.Json;
@@ -17,32 +18,23 @@ namespace NeighborhoodAnalitics.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new LivingRatingCategory());
         }
 
-        //public IActionResult Map(string userInput)
-        //{
-        //    quantitySearcher = new PlaceQuantitySearcher();
-        //    AbstractRatingCategory chosenCategory = new LivingRatingCategory();
-        //    quantitySearcher.FillPlaceQuantities(userInput, chosenCategory);
-        //    return View(chosenCategory);
-        //}
-        //public IActionResult Map()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        public IActionResult Map(string placeName, string ratingCategory)
+        [HttpPost]
+        public IActionResult Index(IFormCollection form)
         {
+            quantitySearcher = new PlaceQuantitySearcher();
+
             AbstractRatingCategory live = new LivingRatingCategory();
             AbstractRatingCategory travel = new TouristicRatingCategory();
             AbstractRatingCategory chosenCategory;
-
-            if (ratingCategory == "live")
+            string category = form["category"];
+            if (category == "live")
             {
                 chosenCategory = live;
             }
-            else if (ratingCategory == "travel")
+            else if (category == "travel")
             {
                 chosenCategory = travel;
             }
@@ -50,9 +42,8 @@ namespace NeighborhoodAnalitics.Controllers
             {
                 chosenCategory = travel;
             }
-            quantitySearcher = new PlaceQuantitySearcher();
-            quantitySearcher.FillPlaceQuantities(placeName, chosenCategory);
-
+            quantitySearcher.FillPlaceQuantities(form["placeInput"], chosenCategory);
+            chosenCategory.SetPlaceName(form["placeInput"]);
             return View(chosenCategory);
         }
     }
